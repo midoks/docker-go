@@ -32,3 +32,14 @@ RUN chmod +x /usr/sbin/gosu \
     socat \
     tzdata \
     rsync
+
+
+COPY docker/nsswitch.conf /etc/nsswitch.conf
+
+
+VOLUME ["/data"]
+EXPOSE 22 3000
+
+
+
+
