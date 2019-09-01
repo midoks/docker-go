@@ -33,10 +33,11 @@ RUN chmod +x /usr/sbin/gosu \
     tzdata \
     rsync
 
+RUN apk --no-cache --no-progress add strace
 
 COPY docker/nsswitch.conf /etc/nsswitch.conf
 
-
+WORKDIR /app/
 VOLUME ["/data"]
 EXPOSE 22 3000
 
