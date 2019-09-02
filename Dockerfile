@@ -16,9 +16,10 @@ RUN cd /app/echo && go build main.go
 
 
 FROM alpine:latest
+
+RUN echo http://mirrors.aliyun.com/alpine/edge/community/ >> /etc/apk/repositories
 ADD https://github.com/tianon/gosu/releases/download/1.10/gosu-amd64 /usr/sbin/gosu
 RUN chmod +x /usr/sbin/gosu \
-  && echo http://dl-2.alpinelinux.org/alpine/edge/community/ >> /etc/apk/repositories \
   && apk --no-cache --no-progress add \
     bash \
     ca-certificates \
