@@ -16,7 +16,8 @@ RUN cd /app/echo && go build main.go
 
 
 FROM alpine:latest
+
 COPY --from=binarybuilder /app/echo/main .
+EXPOSE 3000
 
-
-
+ENTRYPOINT ["./main"]
