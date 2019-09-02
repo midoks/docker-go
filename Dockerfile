@@ -19,8 +19,8 @@ FROM alpine:latest
 
 RUN echo http://mirrors.aliyun.com/alpine/edge/community/ >> /etc/apk/repositories
 ADD https://github.com/tianon/gosu/releases/download/1.10/gosu-amd64 /usr/sbin/gosu
-RUN chmod +x /usr/sbin/gosu \
-  && apk --no-cache --no-progress add \
+RUN chmod +x /usr/sbin/gosu
+RUN apk --no-cache --no-progress add \
     bash \
     ca-certificates \
     curl \
